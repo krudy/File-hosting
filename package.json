@@ -8,7 +8,7 @@
     "watch": "nodemon app/app.js -e js,json,ejs",
     "debug": "nodemon --inspect app/app.js -e js,json"
   },
-  "author": "Krzysztof Rudnicki",
+  "author": "Krzysztof_Rudnicki",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
