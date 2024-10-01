@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     cb(null , 'public/uploads/');
   },
   filename( req, file, cb) {
-    const name = `${Data.now()}-${file.originalname}`;
+    const name = `${Date.now()}-${file.originalname}`;
     cb(null, name);
   }
 })
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.post('/', multer({storage}).single('file'), (req, res) => {
   res.render('home', {
-    fileURL: req.file.filename
+    fileURL: req.url + '/uploads/' + req.file.filename
   });
 });
 

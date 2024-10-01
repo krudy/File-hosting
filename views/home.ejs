@@ -31,7 +31,11 @@
             <button class="btn btn-success">Wgraj!</button>
           </form>
 
-          
+          <% if (typeof fileURL !== 'undefined') { %>
+          <div class="alert alert-success">
+            Plik został wgrany! Link do pobrania: <a href="<%= fileURL %>"><%= fileURL %></a>
+          </div>
+          <% } %>
     
         </div>
       </div>
