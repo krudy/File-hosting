@@ -17,13 +17,13 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card card-body text-center">
-          <h1 class="display-1">Plikhost</h1>
+          <h1 class="display-1">Filehost</h1>
           <p class="h3 mb-5">Darmowy hosting plików!</p>
           <p>Wgraj plik korzystając z formularza poniżej. Po wgraniu zobaczysz link do pobrania.</p>
           <hr>
     
           
-          <form method="post" enctype="multipart/form-data">
+          <form method="post" enctype="multipart/form-data" class="mb-3">
             <div class="mb-3">
               <label class="form-label">Wybierz plik</label>
               <input type="file" name="file" class="form-control">
@@ -36,6 +36,12 @@
             Plik został wgrany! Link do pobrania: <a href="<%= fileURL %>"><%= fileURL %></a>
           </div>
           <% } %>
+
+          <% if (typeof error !== 'undefined') { %>
+            <div class="alert alert-danger">
+              <%= error %>
+            </div>
+            <% } %>
     
         </div>
       </div>
