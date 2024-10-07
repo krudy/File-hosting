@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.post('/', multer({storage}).single('file'), (req, res) => {
   res.render('home', {
-    fileURL: req.url + '/uploads/' + req.file.filename
+    fileURL: req.headers.host + '/uploads/' + req.file.filename
   });
 });
 
